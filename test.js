@@ -22,9 +22,21 @@ test('divided by 127.9 and multiplied by 0.8 to equal 0.8', () => {
     const { fromYanToPound } = require('./app.js');
     
     let pound = fromYanToPound(127.9);
-    let poundExpected = (pound / 127.9) * 127.9;
+    let poundExpected = (127.9 / 127.9) * 0.8;
 
 
     
     expect(pound).toBe(poundExpected);
 });
+test('divided by 127.9 and multiplied by 0.8 is plus than 0.5 and less than 10', () => {
+    const { fromYanToPound } = require('./app.js');
+    
+    let pound = fromYanToPound(127.9);
+    let poundExpected = (127.9 / 127.9) * 0.8;
+
+
+    
+    expect(pound).toBeGreaterThanOrEqual(0,5);
+    expect(pound).toBeLessThan(10);
+});
+
